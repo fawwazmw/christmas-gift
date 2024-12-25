@@ -209,7 +209,7 @@ body {
   position: fixed;
   width: 50px;
   height: 50px;
-  background: url('https://firebasestorage.googleapis.com/v0/b/webai-54992.appspot.com/o/Gift_Flat_Icon_Vector.svg?alt=media&token=8bb72a2d-183c-462b-a1b8-e42af9bf52e0')
+  background: url('assets/Gift_Flat_Icon_Vector.svg')
     no-repeat;
   background-size: contain;
   cursor: pointer;
