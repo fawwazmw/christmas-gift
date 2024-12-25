@@ -2,6 +2,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "parcel",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ],
   "routes": [
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
     { "src": "/merry-christmas-nadya.html", "dest": "/merry-christmas-nadya.html" },
