@@ -209,7 +209,7 @@ body {
   position: fixed;
   width: 50px;
   height: 50px;
-  background: url('assets/Gift_Flat_Icon_Vector.svg')
+  background: url('/assets/Gift_Flat_Icon_Vector.svg')
     no-repeat;
   background-size: contain;
   cursor: pointer;
