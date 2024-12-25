@@ -1,7 +1,7 @@
 {
-  "name": "code-noel",
+  "name": "fwzdev",
   "version": "1.0.0",
-  "source": "src/index.html",
+  "source": "index.html",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
