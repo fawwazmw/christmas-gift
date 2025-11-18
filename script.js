@@ -88,7 +88,7 @@ function moveSanta() {
 moveSanta();
 
 // Variabel global untuk menyimpan audio instance
-const unwrapSound = new Audio('christmas.mp3');
+const unwrapSound = new Audio('./christmas.mp3');
 unwrapSound.loop = true; // Atur audio untuk berulang setelah selesai
 
 function createGift() {

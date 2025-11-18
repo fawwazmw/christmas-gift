@@ -1,0 +1,554 @@
+body {
+  background: linear-gradient(#0f2027, #203a43, #2c5364);
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.snow-container {
+  pointer-events: none;
+  z-index: 2;
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.snow {
+  filter: blur(1px);
+  background: #fff;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: linear forwards snowfall;
+  position: absolute;
+}
+
+@keyframes snowfall {
+  from {
+    transform: translateY(-10px)rotate(0);
+  }
+
+  to {
+    transform: translateY(100vh)rotate(360deg);
+  }
+}
+
+.christmas-content {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.christmas-title {
+  color: #fff;
+  text-shadow: 0 0 10px red, 0 0 20px red;
+  margin-bottom: 20px;
+  font-family: Mountains of Christmas, cursive;
+  font-size: 3rem;
+  animation: 2s ease-in-out infinite alternate glow;
+  position: relative;
+  transform: none;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px red, 0 0 20px red;
+  }
+
+  to {
+    text-shadow: 0 0 20px red, 0 0 30px red, 0 0 40px red;
+  }
+}
+
+.music-toggle {
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+  background: #0000004d;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 30px;
+  transition: transform .3s;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.music-toggle:hover {
+  background: #00000080;
+  transform: scale(1.1);
+}
+
+.christmas-tree {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+}
+
+.tree {
+  justify-content: center;
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  right: 1%;
+}
+
+.pine-tree-img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.star-top {
+  color: gold;
+  z-index: 2;
+  font-size: 40px;
+  animation: 2s infinite alternate starGlow;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bells-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ornament {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  animation: 1.5s infinite alternate twinkle;
+  position: absolute;
+}
+
+.bell {
+  background: gold;
+  border-radius: 50% 50% 45% 45%;
+  width: 20px;
+  height: 20px;
+  animation: 2s infinite bellRing;
+  position: absolute;
+}
+
+.bell:after {
+  content: "";
+  background: #444;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes bellRing {
+  0%, 100% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(15deg);
+  }
+
+  75% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes starGlow {
+  from {
+    filter: drop-shadow(0 0 2px gold);
+  }
+
+  to {
+    filter: drop-shadow(0 0 10px gold);
+  }
+}
+
+.red {
+  background: #f44;
+}
+
+.gold {
+  background: #fd4;
+}
+
+.silver {
+  background: #ddd;
+}
+
+.star {
+  background: #fff;
+  border-radius: 50%;
+  width: 2px;
+  height: 2px;
+  animation: 1s infinite alternate twinkle;
+  position: absolute;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: .2;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.gift {
+  cursor: pointer;
+  z-index: 100;
+  background: url("Gift_Flat_Icon_Vector.4bd43ab6.svg") 0 0 / contain no-repeat;
+  width: 50px;
+  height: 50px;
+  transition: transform .3s;
+  position: fixed;
+}
+
+.gift:hover {
+  transform: scale(1.2)rotate(10deg);
+}
+
+.gift-popup {
+  color: #333;
+  z-index: 2000;
+  text-align: center;
+  background: #fffffff2;
+  border-radius: 15px;
+  padding: 20px 30px;
+  font-size: 1.2em;
+  animation: .5s ease-out popup;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 30px #ff00004d;
+}
+
+@keyframes popup {
+  from {
+    transform: translate(-50%, -50%)scale(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%)scale(1);
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px)translateZ(0)rotate(0);
+  }
+
+  100% {
+    transform: translateY(100vh)translateZ(500px)rotate(360deg);
+  }
+}
+
+.light {
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  animation: 1s infinite alternate blink;
+  position: absolute;
+}
+
+@keyframes blink {
+  from {
+    opacity: .3;
+    transform: scale(.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.clouds {
+  pointer-events: none;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.cloud {
+  opacity: .6;
+  filter: brightness(.8);
+  width: 100px;
+  height: auto;
+  position: absolute;
+}
+
+@keyframes float {
+  from {
+    left: -150px;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+.fireworks-container {
+  pointer-events: none;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.firework-particle {
+  pointer-events: none;
+  opacity: 1;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  animation: 1s forwards fadeOut;
+  position: absolute;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.mouse-particle {
+  pointer-events: none;
+  background: #1fa800;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  animation: 1s linear forwards sparkle;
+  position: fixed;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+.tree {
+  transition: transform .3s;
+}
+
+.tree.shake {
+  animation: .5s ease-in-out shakeTree;
+}
+
+@keyframes shakeTree {
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px)rotate(-5deg);
+  }
+
+  75% {
+    transform: translateX(5px)rotate(5deg);
+  }
+}
+
+.star-top {
+  font-size: 24px;
+  animation: 1.5s infinite alternate starTwinkle;
+  position: absolute;
+  top: -3%;
+  left: 53%;
+  transform: translateX(-50%);
+}
+
+@keyframes starTwinkle {
+  from {
+    opacity: .5;
+    transform: translateX(-50%)scale(.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%)scale(1.2);
+  }
+}
+
+.santa-container {
+  z-index: 1000;
+  align-items: center;
+  animation: 15s linear infinite flyAcross;
+  display: flex;
+  position: fixed;
+  top: 20%;
+  left: -200px;
+}
+
+.santa {
+  z-index: 1;
+  width: 200px;
+  height: auto;
+  margin-right: -30px;
+}
+
+@keyframes flyAcross {
+  0% {
+    transform: translateX(0)translateY(0);
+  }
+
+  25% {
+    transform: translateX(25vw)translateY(-30px);
+  }
+
+  50% {
+    transform: translateX(50vw)translateY(0);
+  }
+
+  75% {
+    transform: translateX(75vw)translateY(-30px);
+  }
+
+  100% {
+    transform: translateX(calc(100vw + 400px))translateY(0);
+  }
+}
+
+.countdown {
+  color: #fff;
+  z-index: 1000;
+  background: #00000080;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.countdown span {
+  color: #f44;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+@media screen and (width <= 768px) {
+  .christmas-title {
+    font-size: 3rem;
+  }
+
+  .countdown {
+    text-align: center;
+    width: 90%;
+    padding: 8px 15px;
+    font-size: 1em;
+  }
+
+  .tree {
+    width: 200px;
+    height: 300px;
+    right: 3%;
+  }
+
+  .star-top {
+    font-size: 30px;
+    top: -15px;
+  }
+
+  .santa {
+    width: 300px;
+  }
+
+  .music-toggle {
+    padding: 10px;
+    font-size: 24px;
+  }
+
+  .cloud {
+    width: 60px;
+  }
+
+  .fireworks-container {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .christmas-content {
+    width: 90%;
+  }
+}
+
+@media screen and (width <= 480px) {
+  .christmas-title {
+    font-size: 2rem;
+  }
+
+  .countdown {
+    font-size: .9em;
+  }
+
+  .tree {
+    width: 150px;
+    height: 250px;
+    right: 3%;
+  }
+
+  .star-top {
+    font-size: 24px;
+    top: -12px;
+  }
+
+  .santa {
+    width: 300px;
+  }
+
+  .cloud {
+    width: 40px;
+  }
+
+  .gift-popup {
+    width: 80%;
+    padding: 15px;
+    font-size: 1em;
+  }
+}
+
+.tiktok-logo {
+  z-index: 1000;
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+}
+
+.tiktok-logo img {
+  width: 35px;
+  height: auto;
+}
+/*# sourceMappingURL=merry-christmas-nadya.3a01df49.css.map */
